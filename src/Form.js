@@ -1,44 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Form.css';
+import fetchTranslation from './fetchTranslation';
+import { NavLink } from 'react-router-dom';
 
-function Form({addIdea}){
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+function Form({addTranslation, setPost, setResponse, setServerError, post, response}){
+  // const [post, setPost] = useState("");
+  // const [response, setResponse] = useState("");
+  
+  
+  function submitTranslations(event) {
+    event.preventDefault()
 
-function submitIdeas(event) {
-        event.preventDefault()
-        const newIdea = {
+        fetchTranslation(post)
+        .then(data => setResponse(data.translatedText))
+        .catch(err => setServerError(err.message))
+        
+        
+        const newTranslation = {
             id: Date.now(),
-            title,
-            description
+            post,
+            response: response
         }
-        addIdea(newIdea)
-        clearInput()
+        addTranslation(newTranslation)
+        console.log(newTranslation)
+        // clearInput()
   }
-  function clearInput(){
-        setTitle("")
-        setDescription("")
-  }
+
+  // function clearInput(){
+  //       setPost("")
+  // }
 
     return (
         <form>
           <input
             type='text'
-            placeholder='Title'
-            name='title'
-            value={title}
-            onChange={event => setTitle(event.target.value)}
+            placeholder='Type here'
+            name='post'
+            value={post}
+            onChange={event => setPost(event.target.value)}
           />
-
-          <input
-            type='text'
-            placeholder='Description'
-            name='description'
-            value={description}
-            onChange={event => setDescription(event.target.value)}
-          />
-
-          <button onClick = { event => submitIdeas(event)}>SUBMIT</button>
+          <h1>{post},{response}</h1>
+         <NavLink to={`/${post}`}>
+          <button onClick = { event => submitTranslations(event)}>SUBMIT</button>
+        </NavLink>
         </form>
       )
     }

@@ -1,7 +1,8 @@
 
+
 function fetchTranslation(words){
-  console.log(words)
- fetch("https://libretranslate.com/translate",{
+  // console.log(words)
+ return fetch("https://libretranslate.com/translate",{
   method: "POST",
   body: JSON.stringify({
   q: words,
@@ -12,9 +13,12 @@ function fetchTranslation(words){
  }),
   headers: {"Content-Type": "application/json" }
   })
-  .then(res=>res.json())
-  .then(data=>console.log(data))
-  .catch(error=>console.log(error))
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Phrase not found.')
+    }
+    return response.json()
+  })
 }
 
 export default fetchTranslation

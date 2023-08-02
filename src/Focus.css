@@ -1,0 +1,19 @@
+.focus-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 1em;
+  margin-top: 5%;
+  height: 63vh;
+  width: 32vw;
+  color: white;
+  font-size: 93%;
+  text-shadow: .5px .5px black;
+}
+
+.focus-section-nav {
+  display: flex;
+  justify-content: center;
+}

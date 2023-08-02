@@ -1,11 +1,12 @@
 import './Card.css';
 
-const Card = ({ title, description, id, deleteIdea }) => {
-    return (
+const Card = ({ post, response, id, deleteTranslation }) => {
+    console.log(response)
+  return (
       <div className='card'>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <button onClick={()=> deleteIdea(id)}>🗑</button>
+        <h3>{post}</h3>
+        <p>{response}</p>
+        <button onClick={()=> deleteTranslation(id)}>🗑</button>
       </div>
     )
   }
