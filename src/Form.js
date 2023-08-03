@@ -80,7 +80,7 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
         </label>
           <button className="focus-page" type="search" onClick = { event => submitTranslations(event)} >SUBMIT</button>
         <NavLink to="/saved-translations">  
-          <button className="forward-button">
+          <button className="saved-button">
             Saved Translations
           </button>
         </NavLink>
