@@ -11,6 +11,8 @@ function App(){
   const [translations, setTranslations] = useState([])
   let [post, setPost] = useState('')
   let [response, setResponse] = useState('')
+  let [defaultLabel, setDefaultLabel] = useState('')
+  // if(post===''){setResponse('')}
   const [serverError, setServerError] = useState(false)
 
   function addTranslation(newTranslation){
@@ -24,11 +26,12 @@ function App(){
 
   return(
     <main className='App'>
-        <h1>Translatify</h1>
+        <h1>Translitt</h1>
         <Routes>
-          <Route path='/' element={<Form addTranslation={addTranslation} setPost={setPost} post={post} setResponse={setResponse} response={response} setServerError={setServerError}/>}/>
-          <Route path='/1' element={<FocusCard post={post} response={response}/>}/>
-          <Route path='/2' element={<Translations translations={translations} deleteTranslation={deleteTranslation}/>}/>
+          <Route path='/' element={<Form addTranslation={addTranslation} setPost={setPost} post={post}
+           setResponse={setResponse} response={response} setServerError={setServerError} setDefaultLabel={setDefaultLabel} defaultLabel={defaultLabel}/>}/>
+          <Route path='/translation' element={ <FocusCard post={post} response={response}/>}/>
+          <Route path='/saved-translations' element={<Translations translations={translations} deleteTranslation={deleteTranslation}/>}/>
         </Routes>
     </main>
   )

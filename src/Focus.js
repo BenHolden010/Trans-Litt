@@ -4,12 +4,12 @@ import fetchTranslation  from './fetchTranslation'
 import './Focus.css'
 import { NavLink } from 'react-router-dom'
 
-const FocusCard = ({post, response, setResponse}) => {
+const FocusCard = ({post, response}) => {
 
-  useEffect(()=>{
-    fetchTranslation(post)
-    .then(data=>setResponse(data.translatedText))
-  },[])
+  // useEffect(()=>{
+  //   fetchTranslation(post)
+  //   .then(data=>setResponse(data.translatedText))
+  // },[])
 
   return (
     <section className={`focus-section`}>
@@ -21,7 +21,9 @@ const FocusCard = ({post, response, setResponse}) => {
         </NavLink>
       </div>
       <div className='focus-card'>
-        <h1>The translation of {post} is {response}</h1>
+      <h1>Your translation will be displayed below</h1>
+        <h2>{post}</h2>
+        <h2>{response}</h2>
       </div>
     </section>
   )
