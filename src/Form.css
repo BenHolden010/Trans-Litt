@@ -7,4 +7,11 @@ input, button {
   width: 30%;
   border: 2px solid black;
   font-size: 18px;
+  border-radius: .5em;
+}
+
+@media screen and (max-width: 375px) {
+  input, button {
+    width: 113px;
+  }
 }

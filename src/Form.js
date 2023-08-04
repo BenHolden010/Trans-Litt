@@ -1,12 +1,9 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import './Form.css';
 import fetchTranslation from './fetchTranslation';
 import { NavLink } from 'react-router-dom';
 
 function Form({addTranslation, setPost, setResponse, setServerError, post, response, setDefaultLabel, defaultLabel}){
-  // const [post, setPost] = useState("");
-  // const [response, setResponse] = useState("");
 
   function submitTranslations(event) {
     event.preventDefault()
@@ -20,32 +17,25 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             }
             
             addTranslation(newTranslation)
-            // clearInput()
         })
         .catch(err => setServerError(err.message))
-  }
-        
-
-  function clearInput(){
-    setPost("")
-    setResponse("")
-    // console.log(response)
   }
 
     return (
         <form>
-          <input
-            type='text'
-            placeholder='Type here'
-            name='post'
-            value={post}
-            onChange={event => setPost(event.target.value)}
-
-          />
+          <input 
+          className="home__searchInput" 
+          type="search" 
+          name="s" 
+          placeholder='Type here'
+          value={post}
+          onChange={event => setPost(event.target.value)}
+          ></input>
           <h2>Your translation will be displayed below and saved automatically</h2>
         <h3>{response}</h3>
-        <label>Choose a Language:
+        <label>Choose a Target Language:
           <select className="default-label" onChange={event => setDefaultLabel(event.target.value)}>
+            <option value="es">Spanish</option>
             <option value="en">English</option>
             <option value="ar">Arabic</option>
             <option value="az">Azerbaijani</option>
@@ -72,7 +62,6 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             <option value="pt">Portuguese</option>
             <option value="ru">Russian</option>
             <option value="sk">Slovak</option>
-            <option value="es">Spanish</option>
             <option value="sv">Swedish</option>
             <option value="tr">Turkish</option>
             <option value="uk">Ukranian</option>
@@ -80,7 +69,7 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
         </label>
           <button className="focus-page" type="search" onClick = { event => submitTranslations(event)} >SUBMIT</button>
         <NavLink to="/saved-translations">  
-          <button className="forward-button">
+          <button className="saved-button">
             Saved Translations
           </button>
         </NavLink>

@@ -16,7 +16,7 @@ function Translations({ translations, deleteTranslation }){
 
   return (
     <div className='translations-container'>
-      {translationCards}
+      {translations.length ? translationCards : <h2>'No saved translations yet! Go back to the home page to add translations.'</h2>}
     </div>
   )
 }

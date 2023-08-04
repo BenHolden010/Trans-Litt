@@ -13,11 +13,12 @@ function fetchTranslation(text, targetLanguage){
   headers: {"Content-Type": "application/json" }
   })
   .then(response => {
-    // if (!response.ok) {
-    //   throw new Error('Phrase not found.')
-    // }
+    if (!response.ok) {
+      throw new Error('Server is down for repair, try again later.')
+    }
     return response.json()
   })
+
 }
 
 export default fetchTranslation
