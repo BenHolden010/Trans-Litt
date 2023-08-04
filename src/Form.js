@@ -1,12 +1,9 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import './Form.css';
 import fetchTranslation from './fetchTranslation';
 import { NavLink } from 'react-router-dom';
 
 function Form({addTranslation, setPost, setResponse, setServerError, post, response, setDefaultLabel, defaultLabel}){
-  // const [post, setPost] = useState("");
-  // const [response, setResponse] = useState("");
 
   function submitTranslations(event) {
     event.preventDefault()
@@ -20,31 +17,23 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             }
             
             addTranslation(newTranslation)
-            // clearInput()
         })
         .catch(err => setServerError(err.message))
-  }
-        
-
-  function clearInput(){
-    setPost("")
-    setResponse("")
-    // console.log(response)
   }
 
     return (
         <form>
-          <input
-            type='text'
-            placeholder='Type here'
-            name='post'
-            value={post}
-            onChange={event => setPost(event.target.value)}
-
-          />
+          <input 
+          class="home__searchInput" 
+          type="search" 
+          name="s" 
+          placeholder='Type here'
+          value={post}
+          onChange={event => setPost(event.target.value)}
+          ></input>
           <h2>Your translation will be displayed below and saved automatically</h2>
         <h3>{response}</h3>
-        <label>Choose a Language:
+        <label>Choose a Target Language:
           <select className="default-label" onChange={event => setDefaultLabel(event.target.value)}>
             <option value="en">English</option>
             <option value="ar">Arabic</option>
@@ -84,6 +73,7 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             Saved Translations
           </button>
         </NavLink>
+        <div>➡️</div>
         </form>
       )
     }
