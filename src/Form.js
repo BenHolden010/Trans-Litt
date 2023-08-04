@@ -24,7 +24,7 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
     return (
         <form>
           <input 
-          class="home__searchInput" 
+          className="home__searchInput" 
           type="search" 
           name="s" 
           placeholder='Type here'
@@ -35,6 +35,7 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
         <h3>{response}</h3>
         <label>Choose a Target Language:
           <select className="default-label" onChange={event => setDefaultLabel(event.target.value)}>
+            <option value="es">Spanish</option>
             <option value="en">English</option>
             <option value="ar">Arabic</option>
             <option value="az">Azerbaijani</option>
@@ -61,7 +62,6 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             <option value="pt">Portuguese</option>
             <option value="ru">Russian</option>
             <option value="sk">Slovak</option>
-            <option value="es">Spanish</option>
             <option value="sv">Swedish</option>
             <option value="tr">Turkish</option>
             <option value="uk">Ukranian</option>
@@ -73,7 +73,6 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
             Saved Translations
           </button>
         </NavLink>
-        <div>➡️</div>
         </form>
       )
     }
