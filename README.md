@@ -1,4 +1,5 @@
 # TransLitt
+https://showcase-seven-delta.vercel.app/
 ## ABSTRACT
 'Translitt' is a web application designed to provide users with millions od translations from 30 different languages. Through an intuitive interface, users can effortlessly type a word or phrse into the input field ans the App will auto detect the incoming language, then output the translation from the language that the user selects. 'Translitt' offers users 30 different languages to shoose from to be able to translate to their terget language and then have the translations automatically save to the saved translations page. if a user decides that they no longer need all of the translations then they can remove the translations using a deelete button. this information will only be stored while the user has not refreshed the applications page. 
 
