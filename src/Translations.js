@@ -1,5 +1,8 @@
 import './Translations.css';
 import Card from "./Card"
+import PropTypes from 'prop-types';
+
+
 function Translations({ translations, deleteTranslation }){
 
   const translationCards = translations.map(translation => {
@@ -21,3 +24,8 @@ function Translations({ translations, deleteTranslation }){
   )
 }
 export default Translations;
+
+Translations.propTypes = {
+  translations: PropTypes.array.isRequired,
+  deleteTranslation: PropTypes.func.isRequired,
+}

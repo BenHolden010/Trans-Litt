@@ -1,4 +1,5 @@
 import './Card.css';
+import PropTypes from 'prop-types';
 
 const Card = ({ post, response, id, deleteTranslation }) => {
     console.log(response)
@@ -11,3 +12,10 @@ const Card = ({ post, response, id, deleteTranslation }) => {
     )
   }
   export default Card;
+
+  Card.propTypes = {
+    post: PropTypes.string.isRequired,
+    response: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    deleteTranslation: PropTypes.func.isRequired
+  }

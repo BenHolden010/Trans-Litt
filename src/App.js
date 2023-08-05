@@ -5,6 +5,7 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import ServerError from './ServerError';
 
+
 function App(){
 
   const [translations, setTranslations] = useState([])

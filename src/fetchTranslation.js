@@ -22,3 +22,4 @@ function fetchTranslation(text, targetLanguage){
 }
 
 export default fetchTranslation
+
