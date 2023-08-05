@@ -14,8 +14,8 @@ const Card = ({ post, response, id, deleteTranslation }) => {
   export default Card;
 
   Card.propTypes = {
-    post: PropTypes.string,
-    response: PropTypes.string,
-    id: PropTypes.number,
-    deleteTranslation: ()=>{}
+    post: PropTypes.string.isRequired,
+    response: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    deleteTranslation: PropTypes.func.isRequired
   }

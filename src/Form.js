@@ -2,6 +2,8 @@ import React from 'react';
 import './Form.css';
 import fetchTranslation from './fetchTranslation';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 function Form({addTranslation, setPost, setResponse, setServerError, post, response, setDefaultLabel, defaultLabel}){
 
@@ -78,3 +80,16 @@ function Form({addTranslation, setPost, setResponse, setServerError, post, respo
     }
 
     export default Form
+
+    Form.propTypes = {
+      post: PropTypes.string.isRequired,
+      response: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      deleteTranslation: PropTypes.func.isRequired,
+      addTranslation: PropTypes.func.isRequired,
+      setPost: PropTypes.string.isRequired,
+      setResponse: PropTypes.string.isRequired,
+      setServerError: PropTypes.string.isRequired,
+      setDefaultLabel: PropTypes.string.isRequired,
+      defaultLabel: PropTypes.string.isRequired
+    }
