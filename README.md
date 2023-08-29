@@ -1,4 +1,5 @@
 # TransLitt
+the App is deployed to this link: https://showcase-seven-delta.vercel.app/
 ## ABSTRACT
 'Translitt' is a web application designed to provide users with millions od translations from 30 different languages. Through an intuitive interface, users can effortlessly type a word or phrse into the input field ans the App will auto detect the incoming language, then output the translation from the language that the user selects. 'Translitt' offers users 30 different languages to shoose from to be able to translate to their terget language and then have the translations automatically save to the saved translations page. if a user decides that they no longer need all of the translations then they can remove the translations using a deelete button. this information will only be stored while the user has not refreshed the applications page. 
 
@@ -22,7 +23,6 @@
 
 ## TECHNOLOGIES USED 
 <div align="center">  
-<a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/typescript-original.svg" alt="TypeScript" height="50" /></a>  
 <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /></a>  
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /></a>   
 <a href="https://nodejs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="Node.js" height="50" /></a>  
